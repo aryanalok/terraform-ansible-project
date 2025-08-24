@@ -1,0 +1,8 @@
+[servers]
+server1 ansible_host=13.203.218.138
+server2 ansible_host=15.206.211.127
+
+[servers:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=/home/aryan/learning/terraform/project2/terraform/terra-ansible-key
+ansible_python_interpreter=/usr/bin/python3

@@ -1,0 +1,27 @@
+---
+- name: Install and Configure Nginx
+  hosts: all
+  become: true
+  tasks:
+    - name: Update apt cache (for Ubuntu/Debian)
+      apt:
+        update_cache: yes
+      when: ansible_os_family == "Debian"
+
+    - name: Install Nginx on Debian/Ubuntu
+      apt:
+        name: nginx
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install Nginx on RHEL/CentOS/Amazon Linux
+      yum:
+        name: nginx
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: Ensure Nginx is started and enabled
+      service:
+        name: nginx
+        state: started
+        enabled: yes
