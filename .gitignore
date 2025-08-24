@@ -4,3 +4,4 @@ terraform/.terraform/providers/registry.terraform.io/hashicorp/aws/6.10.0/linux_
 terraform/.terraform.lock.hcl
 terraform/terra-ansible-key
 terraform/terra-ansible-key.pub
+terraform/.terraform
